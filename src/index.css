@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  
+  --color-academic-blue: #003366;
+  --color-metallic-gold: #D4AF37;
+  --color-gold-light: #F1D592;
+  --color-gold-dark: #B8860B;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+.gradient-blue-gold {
+  background: linear-gradient(135deg, var(--color-academic-blue) 0%, var(--color-metallic-gold) 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, var(--color-metallic-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gold {
+  @apply bg-metallic-gold text-academic-blue font-bold px-6 py-3 rounded-full transition-all hover:bg-gold-dark hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.btn-blue {
+  @apply bg-academic-blue text-white font-bold px-6 py-3 rounded-full transition-all hover:opacity-90 hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.card-shadow {
+  @apply bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
